@@ -16,7 +16,7 @@
     "start": "rollup -c rollup.config.ts -w"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@wessberg/rollup-plugin-ts": "^1.2.24",
     "rollup": "^2.10.9",
