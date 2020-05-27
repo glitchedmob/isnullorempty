@@ -1,0 +1,22 @@
+{
+  "name": "@glitchedmob/isnullorempty",
+  "version": "1.0.0",
+  "description": "a utility for checking is a value is null or empty",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "browser": "dist/umd/index.js",
+  "typings": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c rollup.config.js",
+    "start": "rollup -c rollup.config.ts -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wessberg/rollup-plugin-ts": "^1.2.24",
+    "rollup": "^2.10.9",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
+  }
+}
