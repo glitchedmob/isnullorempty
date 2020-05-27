@@ -1,6 +1,6 @@
 {
   "name": "@glitchedmob/isnullorempty",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a utility for checking is a value is null or empty",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
