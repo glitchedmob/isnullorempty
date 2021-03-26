@@ -7,8 +7,8 @@
   "browser": "dist/umd/index.js",
   "typings": "dist/types/index.d.ts",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/glitchedmob/isnullorempty"
+    "type": "git",
+    "url": "https://github.com/glitchedmob/isnullorempty"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,7 @@
     "@wessberg/rollup-plugin-ts": "^1.2.24",
     "rollup": "^2.10.9",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.3"
+    "typescript": "^4.1.2"
   },
   "keywords": [
     "util",
