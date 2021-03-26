@@ -1,4 +1,4 @@
-function isObjectEmpty(obj: object) {
+function isObjectEmpty(obj: object): boolean {
     for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
             return false;
@@ -8,30 +8,24 @@ function isObjectEmpty(obj: object) {
     return true;
 }
 
-export function isNullOrEmpty(value: any): boolean {
+export function isNullOrEmpty(value: unknown): value is null | undefined {
     if (value === null) {
         return true;
     }
 
-    if (value === undefined) {
-        return true;
+    switch (typeof value) {
+        case 'undefined':
+            return true;
+        case 'string':
+            return value === '';
+        case 'number':
+            return isNaN(value);
+        case 'object':
+            return value?.constructor?.name === 'Object' && isObjectEmpty(value)
+        case 'bigint':
+        case 'function':
+        case 'boolean':
+        case 'symbol':
+            return false;
     }
-
-    if (typeof value === 'string' && value === '') {
-        return true;
-    }
-
-    if (typeof value === 'number' && isNaN(value)) {
-        return true;
-    }
-
-    if (value.constructor.name === 'Object' && isObjectEmpty(value)) {
-        return true;
-    }
-
-    if (Array.isArray(value) && value.length === 0) {
-        return true;
-    }
-
-    return false;
 }
