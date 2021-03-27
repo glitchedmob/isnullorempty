@@ -9,6 +9,9 @@
         "declarationDir": "./dist/types",
         "forceConsistentCasingInFileNames": true
     },
+    "include": [
+        "./src/**/*.ts"
+    ],
     "exclude": [
         "./src/**/*.spec.ts"
     ]
