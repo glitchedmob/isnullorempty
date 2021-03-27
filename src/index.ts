@@ -41,3 +41,11 @@ export function isNullOrEmpty(value: unknown): value is null | undefined {
             return false;
     }
 }
+
+export function isNullOrWhiteSpace(value: unknown): value is null | undefined {
+    if (typeof value === 'string') {
+        value = value.trim();
+    }
+
+    return isNullOrEmpty(value);
+}
