@@ -11,7 +11,7 @@ $ npm i --save @glitchedmob/isnullorempty
 ## Usage
 
 ```js
-import { isNullOrEmpty } from '@glitchedmob/isnullorempty';
+import { isNullOrEmpty, isNullOrWhiteSpace } from '@glitchedmob/isnullorempty';
 
 isNullOrEmpty('')
 //=> true
@@ -44,5 +44,13 @@ isNullOrEmpty([])
 isNullOrEmpty([1, 2])
 //=> false
 isNullOrEmpty(new Date())
+//=> false
+isNullOrWhiteSpace('')
+//=> true
+isNullOrWhiteSpace('   ')
+//=> true
+isNullOrWhiteSpace('test')
+//=> false
+isNullOrWhiteSpace('  test  ')
 //=> false
 ```
