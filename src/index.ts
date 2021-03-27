@@ -25,6 +25,14 @@ export function isNullOrEmpty(value: unknown): value is null | undefined {
                 return value.length < 1;
             }
 
+            if (typeof NodeList !== 'undefined' && value instanceof NodeList) {
+                return value.length < 1;
+            }
+
+            if (typeof HTMLCollection !== 'undefined' && value instanceof HTMLCollection) {
+                return value.length < 1;
+            }
+
             return value?.constructor?.name === 'Object' && isObjectEmpty(value);
         case 'bigint':
         case 'function':

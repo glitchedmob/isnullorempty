@@ -12,7 +12,7 @@
         "url": "https://github.com/glitchedmob/isnullorempty"
     },
     "scripts": {
-        "test": "mocha -r ts-node/register 'src/**/*.spec.ts'",
+        "test": "mocha -r ts-node/register -r jsdom-global/register 'src/**/*.spec.ts'",
         "build": "rollup -c rollup.config.js",
         "start": "rollup -c rollup.config.ts -w"
     },
@@ -23,6 +23,8 @@
         "@types/mocha": "^8.2.2",
         "@wessberg/rollup-plugin-ts": "^1.2.24",
         "chai": "^4.3.4",
+        "jsdom": "^16.5.1",
+        "jsdom-global": "^3.0.2",
         "mocha": "^8.3.2",
         "rollup": "^2.10.9",
         "ts-node": "^9.1.1",

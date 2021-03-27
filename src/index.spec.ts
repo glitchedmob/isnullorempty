@@ -17,6 +17,7 @@ describe('isNullOrEmpty', () => {
 
     it('returns false for string value', () => {
         expect(isNullOrEmpty('test')).to.be.false;
+        expect(isNullOrEmpty(' ')).to.be.false;
     });
 
     it('returns false for numbers', () => {
@@ -51,6 +52,39 @@ describe('isNullOrEmpty', () => {
     it('returns false for non empty array', () => {
         expect(isNullOrEmpty([1])).to.be.false;
         expect(isNullOrEmpty([1, 2])).to.be.false;
+    });
+
+    it('returns true for empty NodeList', () => {
+        const element = document.createElement('div');
+
+        expect(isNullOrEmpty(element.childNodes)).to.be.true;
+    });
+
+    it('returns false for non empty NodeList', () => {
+        const element = document.createElement('div');
+
+        element.appendChild(document.createElement('p'));
+        element.appendChild(document.createElement('p'));
+
+        expect(isNullOrEmpty(element.childNodes)).to.be.false;
+    });
+
+    it('returns true for empty HTMLCollection', () => {
+        const element = document.createElement('div');
+        const collection = element.getElementsByTagName('p');
+
+        expect(isNullOrEmpty(collection)).to.be.true;
+    });
+
+    it('returns false for non empty HTMLCollection', () => {
+        const element = document.createElement('div');
+
+        element.appendChild(document.createElement('p'));
+        element.appendChild(document.createElement('p'));
+
+        const collection = element.getElementsByTagName('p');
+
+        expect(isNullOrEmpty(collection)).to.be.false;
     });
 
     it('returns false for instance of a class', () => {
