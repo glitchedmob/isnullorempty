@@ -21,7 +21,11 @@ export function isNullOrEmpty(value: unknown): value is null | undefined {
         case 'number':
             return isNaN(value);
         case 'object':
-            return value?.constructor?.name === 'Object' && isObjectEmpty(value)
+            if (Array.isArray(value)) {
+                return value.length < 1;
+            }
+
+            return value?.constructor?.name === 'Object' && isObjectEmpty(value);
         case 'bigint':
         case 'function':
         case 'boolean':
