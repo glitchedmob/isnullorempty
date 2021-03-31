@@ -54,3 +54,49 @@ isNullOrWhiteSpace('test')
 isNullOrWhiteSpace('  test  ')
 //=> false
 ```
+
+There is also "Not" versions of each of the functions that check for the inverse
+```js
+import { isNotNullOrEmpty, isNotNullOrWhiteSpace } from '@glitchedmob/isnullorempty';
+
+isNotNullOrEmpty('')
+//=> false
+isNotNullOrEmpty('test')
+//=> true
+isNotNullOrEmpty(null)
+//=> false
+isNotNullOrEmpty(undefined)
+//=> false
+isNotNullOrEmpty(true)
+//=> true
+isNotNullOrEmpty(false)
+//=> true
+isNotNullOrEmpty(0)
+//=> true
+isNotNullOrEmpty(1)
+//=> true
+isNotNullOrEmpty(2)
+//=> true
+isNotNullOrEmpty(NaN)
+//=> false
+isNotNullOrEmpty(Infinity)
+//=> true
+isNotNullOrEmpty({})
+//=> false
+isNotNullOrEmpty({ key: 'value' })
+//=> true
+isNotNullOrEmpty([])
+//=> false
+isNotNullOrEmpty([1, 2])
+//=> true
+isNotNullOrEmpty(new Date())
+//=> true
+isNotNullOrWhiteSpace('')
+//=> false
+isNotNullOrWhiteSpace('   ')
+//=> false
+isNotNullOrWhiteSpace('test')
+//=> true
+isNotNullOrWhiteSpace('  test  ')
+//=> true
+```
