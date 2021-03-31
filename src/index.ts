@@ -42,10 +42,18 @@ export function isNullOrEmpty(value: unknown): value is null | undefined {
     }
 }
 
+export function isNotNullOrEmpty<T>(value: T | null | undefined): value is T {
+    return !isNullOrEmpty(value);
+}
+
 export function isNullOrWhiteSpace(value: unknown): value is null | undefined {
     if (typeof value === 'string') {
         value = value.trim();
     }
 
     return isNullOrEmpty(value);
+}
+
+export function isNotNullOrWhiteSpace<T>(value: T | null | undefined): value is T {
+    return !isNullOrWhiteSpace(value);
 }
