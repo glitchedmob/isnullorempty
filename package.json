@@ -24,7 +24,7 @@
         "chai": "^4.3.4",
         "jsdom": "^16.5.3",
         "jsdom-global": "^3.0.2",
-        "mocha": "^8.4.0",
+        "mocha": "^10.1.0",
         "rollup": "^2.47.0",
         "rollup-plugin-terser": "^7.0.2",
         "ts-node": "^9.1.1",
